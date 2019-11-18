@@ -1,22 +1,46 @@
 {
-  "name": "typescript-server-template",
+  "name": "typescript-template",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Typescript template project",
+  "main": "src/index.ts",
+  "repository": "https://github.com/grezxune/Typescript-Template",
+  "author": "grezxune <tomtrezb2003@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "npx tsc -w",
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --fix",
+    "check-types": "tsc --noEmit",
+    "start": "yarn && ts-node-dev --respawn src",
+    "codegen": "graphql-codegen"
+  },
+  "dependencies": {
+    "@types/jsonwebtoken": "^8.3.5",
+    "@types/lodash": "^4.14.146",
+    "apollo-server-express": "^2.9.8",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "graphql-import": "^0.7.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "ts-node": "^8.5.0"
+  },
   "devDependencies": {
     "@graphql-codegen/add": "^1.8.3",
     "@graphql-codegen/cli": "^1.8.3",
     "@graphql-codegen/typescript": "^1.8.3",
-    "@graphql-codegen/typescript-operations": "^1.8.3",
-    "@graphql-codegen/typescript-react-apollo": "^1.8.3",
     "@graphql-codegen/typescript-resolvers": "^1.8.3",
     "@types/graphql": "^14.5.0",
-    "graphql": "^14.5.8",
-    "ts-node": "^8.5.2",
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.2"
-  },
-  "scripts": {
-    "codegen": "DEBUG=true graphql-codegen"
-  },
-  "dependencies": {}
+  }
 }

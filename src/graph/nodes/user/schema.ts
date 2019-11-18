@@ -2,9 +2,10 @@ import { gql } from 'apollo-server-express';
 
 export default gql`
     extend type Query {
-        viewer: User
+        testOnExtend: User
     }
 
+    "User type"
     type User {
         id: Int!
         firstName: String!
@@ -12,6 +13,7 @@ export default gql`
         email: String!
         birthdate: Int!
         signupDateTime: Int!
+        test: String
         # gender: gender
         # subscription: StripeSubscription!
     }

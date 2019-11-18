@@ -1,20 +1,15 @@
-# schema: server/src/graph/schema.ts
-schema: http://localhost:4444/graphql
+schema: src/graph/schema.ts
 require:
-  - ts-node/register
+    - ts-node/register
+watch:
+    - src/graph/nodes/**/{schema,query,mutation,subscription}.ts
+overwrite: true
 generates:
-  server/src/graph/gen-types.ts:
-    plugins:
-      # - add: "import { IContext } from './context';"
-      - typescript
-      - typescript-resolvers
-    config:
-      # defaultMapper: any
-      contextType: ./context#IContext
-  # /web/src/gen-types.tsx:
-  #   documents: /client/src/queries/*.tsx
-  #   plugins:
-  #     - add: /* eslint-disable */
-  #     - typescript
-  #     - typescript-operations
-  #     - typescript-react-apollo
+    src/graph/gen-types.ts:
+        plugins:
+            - typescript
+            - typescript-resolvers
+            # - typescript-operations
+            # - typescript-document-nodes
+        config:
+            contextType: ./context#IContext

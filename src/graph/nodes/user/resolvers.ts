@@ -1,4 +1,4 @@
-import { Resolvers, User } from '../../gen-types';
+import { Resolvers } from '../../gen-types';
 
 export const resolvers: Resolvers = {
     Query: {
@@ -10,8 +10,7 @@ export const resolvers: Resolvers = {
                 birthdate: 1234453534,
                 email: 'tomtrezb2003@gmail.com',
                 signupDateTime: 1253453453,
-            } as User;
+            };
         },
     },
-    User: {},
 };

@@ -19,6 +19,7 @@ export type Query = {
    __typename?: 'Query',
   placeholder: Scalars['String'],
   viewer?: Maybe<User>,
+  testOnRoot?: Maybe<Scalars['String']>,
 };
 
 export type Subscription = {
@@ -26,6 +27,7 @@ export type Subscription = {
   placeholder: Scalars['String'],
 };
 
+/** User type */
 export type User = {
    __typename?: 'User',
   id: Scalars['Int'],
@@ -34,6 +36,7 @@ export type User = {
   email: Scalars['String'],
   birthdate: Scalars['Int'],
   signupDateTime: Scalars['Int'],
+  test?: Maybe<Scalars['String']>,
 };
 
 
@@ -134,6 +137,7 @@ export type MutationResolvers<ContextType = IContext, ParentType extends Resolve
 export type QueryResolvers<ContextType = IContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   placeholder?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
   viewer?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>,
+  testOnRoot?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
 };
 
 export type SubscriptionResolvers<ContextType = IContext, ParentType extends ResolversParentTypes['Subscription'] = ResolversParentTypes['Subscription']> = {
@@ -147,6 +151,7 @@ export type UserResolvers<ContextType = IContext, ParentType extends ResolversPa
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>,
   birthdate?: Resolver<ResolversTypes['Int'], ParentType, ContextType>,
   signupDateTime?: Resolver<ResolversTypes['Int'], ParentType, ContextType>,
+  test?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>,
 };
 
 export type Resolvers<ContextType = IContext> = {
